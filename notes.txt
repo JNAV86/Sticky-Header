@@ -1,0 +1,227 @@
+
+
+Pages:
+-	index (home)
+
+-	softscapes
+	#vegetation
+	#irrigation
+	#drainage
+	#flowerbeds
+	#turf
+	#
+
+
+-	hardscapes
+	#firepits
+	#driveways
+	#walkways
+	#walls
+	#fireplaces
+	#pergolas
+	#decks
+	#terraces
+
+-	aquascapes
+	#fountains
+	#ponds
+	#streams
+	#waterfalls
+	#
+
+-	gallery
+
+-	services
+
+-	contact us
+
+-	blog
+
+-	email list
+
+- 	CTA
+
+
+home
+about
+services
+gallery
+contact
+
+
+
+
+
+drainage
+irrigation
+lighting
+
+
+design
+
+installation
+construction
+
+ornaments
+decorations
+
+
+
+
+web portfolio:
+dermatologist
+lawfirm
+pediatrics
+vetinarian
+obgyn
+
+
+
+
+
+
+$(document).ready(function() {
+
+
+
+
+    function checkLazyLoading() {
+        // check elements that are still hidden
+        $('.lazyload').each( function(i){
+            // middle of object and current viewport
+            var
+                middle = $(this).offset().top + ($(this).outerHeight() / 2),
+                top = $(window).scrollTop(),
+                bottom = top + $(window).height()
+            ;
+
+            // if the object is half visibile, show it
+            if (top < middle && middle < bottom) {
+                $(this)
+                    // remove class, since we're already loading this element
+                    .removeClass('lazyload')
+                    // animate to visibile
+                    .animate({'opacity':'1'}, 500)
+                ;
+            }
+        }); 
+    }
+
+    // @see http://ejohn.org/blog/learning-from-twitter/
+    var scrollHappened = false;
+    $(window).scroll(function() {
+        scrollHappened = true;
+    });
+    setInterval(function() {
+        if (scrollHappened) {
+            scrollHappened = false;
+            checkLazyLoading();
+        }
+    });
+
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 130) {
+            $('.navbar').show();
+        } else {
+            $('.navbar').hide();
+        }
+    });
+});
+
+
+
+
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hidden-text').each( function(i){
+            
+                middle = $(this).offset().top + ($(this).outerHeight() / 2),
+                top = $(window).scrollTop(),
+                bottom = top + $(window).height()
+
+            /* If the object is completely visible in the window, fade it it */
+            if(top < middle && middle < bottom){
+                
+                $(this).fadeIn( "slow" );   
+
+            }else if (){
+
+            }
+            
+        }); 
+    
+    });
+
+
+
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hidden-text').each( function(i){
+            
+                middle = $(this).offset().top + ($(this).outerHeight() / 2),
+                top = $(window).scrollTop(),
+                bottom = top + $(window).height()
+
+            /* If the object is completely visible in the window, fade it it */
+            if(top < middle && middle < bottom){
+                
+                $(this).fadeIn( "slow" );   
+
+            }
+            
+        }); 
+    
+    });
+
+$(document).ready(function(){
+var view = {};
+
+var checkPosition = function(){
+   var elem = $('.fadethisdiv'), top = elem.offset().top;
+
+                if (top - view.limit < 300) {
+                    elem.css('display','none'); 
+                }
+            };
+
+       $(window).bind('scroll', function() {
+
+            view.top = $(window).scrollTop();
+            view.limit = view.top + $(window).height();
+
+            checkPosition();
+        }); 
+
+});
+
+
+$(window).scroll(function () {
+    console.log($(window).scrollTop());
+    var topDivHeight = $(".topdiv").height();
+    var viewPortSize = $(window).height();
+    
+    var triggerAt = 150;
+    var triggerHeight = (topDivHeight - viewPortSize) + triggerAt;
+
+    if ($(window).scrollTop() >= triggerHeight) {
+        $('.fadethisdiv').css('visibility', 'visible').hide().fadeIn();
+        $(this).off('scroll');
+    }
+});
+
+scrollTop() 
+
+				<div class=container4>
+			  		<p class="jumbo-text" style="color:white">
+			  			<a href="softscapes.html" class="navbar-link hidden-text">
+			  				SOFTSCAPES
+			  			</a>
+			  		</P>
+
+				</div>	
+
+
+
+
